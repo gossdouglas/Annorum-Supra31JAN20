@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Advising Tool</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="justified-nav.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="masthead">
+                <h3 class="text-muted">Advising Tool-Log In</h3>
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav text-md-center nav-justified w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="student_view.html">Student View</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="advisor_view.html">Advisor View</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login_view.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <h2 class="align-middle text-center">Please log in below.</h2>
+            </div>
+            <!-- Jumbotron -->
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" action="cgi-bin/hello.pl" method="POST">
+                        <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-md-auto label_container">
+                                    <label for="exampleInputEmail1">W Number:</label>
+                                </div>
+                                <div class="col-md-auto label_container">
+                                    <input type="text" class="form-control" placeholder="" name="userID">
+                                </div>
+                                <div class="col-md-auto label_container">
+                                    <label for="exampleInputEmail1">Password:&nbsp;</label>
+                                </div>
+                                <div class="col-md-auto label_container">
+                                    <input type="text" class="form-control" name="password">
+                                </div>
+                            </div>                             
+                        </div>                         
+                        <hr/>
+                        <div class="row pg-empty-placeholder">
+</div>
+                        <hr/>
+                        <div class="row">
+                            <div class="form-group"> 
+</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>                         
+                    </form>
+                </div>
+            </div>
+            <!-- Site footer -->
+            <footer class="footer">
+                <p>© Company 2017</p>
+            </footer>
+        </div>         
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

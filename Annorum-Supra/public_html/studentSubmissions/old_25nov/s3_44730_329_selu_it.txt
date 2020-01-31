@@ -1,0 +1,11 @@
+a new entry for s3.  9:48 local on 25nov
+i have added a new line at 22:10 local 25 nov.
+
+i think the trick is for immediate usage is to open the ftp file in ms code.  this is a test. 10:20 25 nov.
+
+yep.  that's the trick.  this note was made at 10:21.
+
+this is not the trick.  there is a server lag.  10:59
+
+the purpose is not to edit, however.  this can work.
+

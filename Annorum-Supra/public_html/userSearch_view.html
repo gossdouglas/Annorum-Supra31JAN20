@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Advising Tool</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="justified-nav.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="masthead">
+                <h3 class="text-muted">Advising Tool-Log In</h3>
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav text-md-center nav-justified w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home-Dead<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="student_view.html">Student View</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cgi-bin/advisor.cgi">Advisor View</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login_view.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="newUser_view.html">New User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cgi-bin/assign.cgi">Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userSearch_view.html">AJAX Assignment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <h2 class="align-middle text-center">Search Users Below.</h2>
+            </div>
+            <!-- Jumbotron -->
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="form-group"> 
+</div>
+                <div class="input-group"> 
+                    <span class="input-group-addon">Search</span> 
+                    <input type="text" name="namekey" id="namekey" placeholder="Search by User First Name " class="form-control"/> 
+                </div>                 
+                <br/> 
+                <div id="insertext"></div>                 
+            </div>
+            <!-- Site footer -->
+            <footer class="footer">
+                <p>© Company 2017</p>
+            </footer>
+        </div>         
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"getdata.php",
+   method:"POST",
+   data:{query:query},
+   success:function(data)
+   {
+    $('#insertext').html(data);
+   }
+  });
+ }
+ $('#namekey').keyup(function(){
+  var search = $(this).val();
+  if(search != '')
+  {
+   load_data(search);
+  }
+  else
+  {
+   load_data();
+  }
+ });
+});
+</script>

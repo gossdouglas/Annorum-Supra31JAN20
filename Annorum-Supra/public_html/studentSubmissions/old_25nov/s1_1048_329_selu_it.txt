@@ -1,0 +1,6 @@
+I used Blynk in CMPS 375 to make a  basic UI for the group project.  While we didn’t end up using this software for the project due to time constraints among the team members, I have saved the link in my Evernote account so I can potentially use it in the future.
+For my initial testing, I used an Arduino with an ethernet shield that was attached to a wireless router set up in client mode.  Within 15 short minutes, I was able to install the app on my Android phone and control the output of a digital pin on the Arduino.  While this certainly isn’t very impressive, it certainly demonstrates the ease of use that goes along with this software.  I regretted that we didn’t have time to explore this software because of time constraints.
+One downside that I noticed about the software is that it doesn’t allow for a very customizable user interface, but then again, that may be it’s biggest draw for some Arduino developers.  And, the controls and other UI elements aren’t resizeable, which leads to a lot of wasted real estate on the display.
+I eventually found a better tool, called Cayenne.
+https://blynk.io/
+

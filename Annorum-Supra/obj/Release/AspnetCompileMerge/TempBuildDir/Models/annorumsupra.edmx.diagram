@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="56287afa0f5b4d2ea1410d6a9d018b70" Name="Diagram1">
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_common_mtrl" Width="1.5" PointX="2.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_expense" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_invoice" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_prdct_type" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_price" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_product" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="annorum_supra_cmps411Model.tbl_shop" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_EXPENSE_TBL_COMMON_MTRL" ManuallyRouted="false" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_INVOICE_TBL_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_INVOICE_TBL_SHOP" ManuallyRouted="false" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_PRODUCT_TBL_PRDCT_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_PRICE_TBL_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="annorum_supra_cmps411Model.FK_TBL_PRICE_TBL_SHOP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

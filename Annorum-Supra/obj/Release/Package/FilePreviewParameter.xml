@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="annorumsupra.gossdouglas.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\GOSS-E5540\\Documents\\GitHub\\Annorum\ Supra\\annorum_supra\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\GOSS-E5540\\Documents\\GitHub\\Annorum\ Supra\\annorum_supra\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="annorum_supra_cmps411Entities-Web.config Connection String" description="" value="metadata=res://*/Models.annorum_supra.csdl|res://*/Models.annorum_supra.ssdl|res://*/Models.annorum_supra.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=198.71.227.2;initial catalog=annorum_supra_cmps411;persist security info=True;user id=cmps411;password=Cmps_411;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\GOSS-E5540\\Documents\\GitHub\\Annorum\ Supra\\annorum_supra\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='annorum_supra_cmps411Entities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-annorum_supra-20191203090703.mdf;Initial Catalog=aspnet-annorum_supra-20191203090703;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\GOSS-E5540\\Documents\\GitHub\\Annorum\ Supra\\annorum_supra\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

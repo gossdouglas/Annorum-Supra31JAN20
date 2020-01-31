@@ -1,0 +1,6 @@
+this is a new text document for user 2.  uploaded at local time 19:05:??
+
+there seems to be a 7 minute lag between my updates to these data folders and what is reported on my browser.
+this remark was entered at 9:36 25nov19.
+
+the expected text is produced with a little shaking.  i think it's my internet connection. the logic is fine.

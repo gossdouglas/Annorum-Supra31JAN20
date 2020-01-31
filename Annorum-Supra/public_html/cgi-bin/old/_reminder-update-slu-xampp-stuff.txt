@@ -1,0 +1,3 @@
+update perl location.txt
+
+a local server and the slu server has been a pain.

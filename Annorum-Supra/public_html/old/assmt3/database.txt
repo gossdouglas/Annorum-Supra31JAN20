@@ -1,0 +1,11 @@
+title 1%author 2%1108%publisher 1%1975
+title 1%author 3%isbn 3%publisher 2%1975
+title 2 %that one dude%8963%those fellas%1960
+title 6%author 2%7541%yellow 5%1961
+Title 7%Brown%8942%Ralling%1912
+Fabric of the Cosmos%Green%8962%Rand Publishing%2002
+title 5%ben jones%8521%Grayson%2004
+title 1%author 1%isbn 1%publisher 1%1975
+title 2%author 3%isbn 3%publisher 2%1965
+xxxxx1%xxxxx1%xxxxx1%xxxxx1%xxxx1
+

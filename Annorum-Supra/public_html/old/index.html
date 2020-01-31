@@ -1,0 +1,161 @@
+<!doctype html>
+<!--Douglas Goss, CMPS 294-->
+<html>
+<head>
+<style>
+	h1 {text-align: center;color:red;margin: auto;background-color: yellow;width:30%;}
+	h3 {text-align: center;background-color: #F5C3F0;border: 1px solid red;width: 85%;margin: auto; }
+	.invisible{ margin: 0px;visibility:hidden}
+	.item_info_name{margin: 0px;padding: 3px;color: blue;font-weight: bold;}
+	.item_info{margin: 0px;padding: 3px;color: }
+	.item_add{text-align: center}
+/*	table, td {border: 1px solid black;}*/
+	table {border: 1px solid black;}
+/*	form {border: 1px solid blue;}*/
+	.hr_product_divider{border: .5px solid black;width: 45%}
+		
+	</style>
+<meta charset="utf-8">
+<title>index</title>
+</head>
+
+<body style="background-color: pink" >
+	<input type="hidden" name="goss" value="douglas goss"> 
+	<h1 >Annorum Supra</h1><br>
+	<h3 style="width: 700px" ><hr class="invisible">Is your decor unimaginative?</hr><hr class="invisible">Annorum Supra can handle that for you with engravings of things that precede the 20th century.</hr></h3><br>
+	<div style="width: 80%;margin: auto;">
+	<form style="margin:inherit;" action="http://ck.csit.selu.edu/~ck/cgi-bin/formhandler.pl">
+	<table style="margin:inherit">
+		<tr>
+			<td style="width: 300px; text-align: right;padding: 5px"> <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/46892074_2226802104272334_6288484320717832192_n.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=5d402fc06feadd89a324367d7ba3fcfe&oe=5D156158" alt="1847 French Quarter" width="234" height="312"><br>			
+			</td>
+			<td style="width: 250px;text-align: center; vertical-align: top;"><h5 class="item_info_name">1847 French Quarter</h5>
+			  <hr class="invisible">
+			  <h5 class="item_info">Map of the French Quarter in 1847</h5>
+			  <hr class="invisible"><h5 class="item_info">Price: $120</h5>
+				<table style="text-align: left;border:0px;">
+				<tr><td style="width: 75px;"></td><td><input type="radio" name="river_type" value="river_blue";>Blue river</td></tr>
+				<tr><td style="width: 75px;"></td><td><input type="radio" name="river_type" value="river_gold";>Gold river</td></tr>
+				<tr><td style="width: 75px;"></td><td><input type="radio" name="river_type"  value="river_uncolored";>Uncolored river</td></tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_add"><input type="checkbox" name="add_cart_item1" value="true";>Add this item to cart.</td>
+		</tr>
+		</table>
+	<hr class="hr_product_divider">
+		
+<!--	begin new product with a modified table	-->
+<!--	<form style="margin:inherit">-->
+	<table style="margin:inherit">
+		<tr>
+			<td style="width: 300px; text-align: center;padding: 5px"> <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/34207278_2086977174921495_2344507236820189184_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=4e8cb7f18f8e062d5229006dc313983d&oe=5D18A27E" alt="1728 Ship" width="288" height="162"><br>			
+			</td>
+			<td style="width: 250px;text-align: center; vertical-align: top;"><h5 class="item_info_name">A Ship of War of the Third Rate</h5><hr class="invisible"><h5 class="item_info">Diagram of a 1728 British war ship</h5>
+			<hr class="invisible"><h5 class="item_info">Price: $200</h5>
+				<table style="text-align: left;border: 0px">
+<!--					<tr><td style="width: 75px;"></td>-->
+						<td style="width: 240px;">
+						<select name="item_frame_finish" style="width:inherit;">
+							<option value="cherry">Cherry</option>
+							<option value="oak">Oak</option>
+							<option value="walnut">Walnut</option>
+						</select>
+						</td>
+					</tr>	
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_add"><input type="checkbox" name="add_cart_item2" value="true";>Add this item to cart.</td>
+		</tr>
+		</table>
+		<hr class="hr_product_divider">
+		
+<!--	begin new product with a modified table	-->
+	<table style="margin:inherit">
+		<tr><!--begin row will contain the <td> for image and <td> for item info-->
+<!--		begin image <td>-->
+			<td style="width: 300px; text-align: left;padding: 5px"> <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/16602884_1852778581674690_8429604343831375280_n.jpg?_nc_cat=109&_nc_ht=scontent-atl3-1.xx&oh=2c460dd2229cd3001bb9649c48ab03ee&oe=5D2303BE" alt="1878 New Orleans" width="274" height="180"><br>			
+			</td>
+<!--		end image <td>-->
+<!--		begin <td> to store the item info section	-->
+			<td style="width: 250px;text-align: center; vertical-align: top;">
+				<h5 class="item_info_name">1878 New Orleans</h5>
+				<hr class="invisible"><h5 class="item_info">Map of New Orleans in 1878</h5>
+				<hr class="invisible"><h5 class="item_info">Price: $80</h5>
+<!--			begin table to contain input boxes for the item info section	-->
+				<table style="text-align: left;border:0px;">
+				<tr>
+<!--				empty container for spacing	-->
+					<td style="width: 75px;"></td>
+<!--				non-empty container for the input	-->
+					<td><input type="checkbox" name="1878_frame_option" value="true";>Frame</td>
+				</tr>
+				<tr>
+<!--				empty container for spacing	-->
+					<td style="width: 75px;"></td>
+<!--				non-empty container for the input	-->					
+					<td><input type="checkbox" name="1878_patina_option" value="true";>Patina river</td>
+				</tr>
+<!--			end table to contain input boxes for the item info section	-->		
+				</table>
+<!--		end <td> to store the item info section	-->
+			</td>
+		</tr><!--end row will contain the <td> for image and <td> for item info-->
+<!--begin row to hold input for add item to cart		-->
+		<tr>
+			<td class="item_add"><input type="checkbox" name="add_cart_item3" value="true";>Add this item to cart.</td>
+		</tr>
+<!--end row to hold input for add item to cart		-->		
+		</table>
+<!--	end new product with a modified table	-->
+		
+
+<!--Shipping information section-->
+<!--	begin new product with a modified table	-->
+	<table style="margin:inherit;width: 575px;text-align: center; vertical-align: top; border-width: 0">
+		<tr style="">
+			<td style="text-align: right;color:brown;font-weight: bold">Shipping information:</td>
+		</tr>
+		<tr style="">
+			<td style="text-align: right;width:">Your name:</td>
+			<td style="text-align: left;width:"><input type="text" name="shipping_name" value="";></td>
+		</tr>
+		<tr>
+			<td style="text-align: right">Your phone number:</td>
+			<td style="text-align: left"><input type="text" name="shipping_phone" value="";></td>
+		</tr>
+		<tr>
+			<td style="text-align: right">Your address:</td>
+			<td style="text-align: left"><input type="text" name="shipping_address" value="";></td>
+		</tr>
+		<tr>
+			<td style="text-align: right">Should we put you on our mailing list?</td>
+			<td style="text-align: left"><input type="radio" name="shipping_mail_list" value="true">Yes<input type="radio" name="shipping_mail_list" value="false">No</td>
+		
+	</table>
+	<br>
+	<table style="margin:inherit;width: 575px;text-align: center; vertical-align: top; border-width: 0">
+		<tr>
+			<td style="text-align: left">Message or any particular instructions:</td>
+		</tr>
+		<tr>
+			<td style="text-align: left"><textarea name="shipping_msg" rows="4" cols="40"></textarea></td>
+		</tr>					
+	</table>
+<!--	end new product with a modified table	-->	
+
+	<table style="margin:inherit;width: 575px;text-align: center; vertical-align: top; border-width: 0">
+		<tr>
+			<td style="text-align: left"><input type="submit"></td>
+		</tr>
+							
+	</table>	
+		
+	</form>
+	</div>
+			
+</body>
+</html>

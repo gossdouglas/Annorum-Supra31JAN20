@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="annorum_supra_cmps411ModelStoreContainer" CdmEntityContainer="annorum_supra_cmps411Entities">
+    <EntitySetMapping Name="tbl_common_mtrl">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_common_mtrl">
+        <MappingFragment StoreEntitySet="tbl_common_mtrl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="subtype" ColumnName="subtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_expense">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_expense">
+        <MappingFragment StoreEntitySet="tbl_expense">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="subtype" ColumnName="subtype" />
+          <ScalarProperty Name="dscptn" ColumnName="dscptn" />
+          <ScalarProperty Name="date_purchased" ColumnName="date_purchased" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_invoice">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_invoice">
+        <MappingFragment StoreEntitySet="tbl_invoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="prdct_code" ColumnName="prdct_code" />
+          <ScalarProperty Name="shop_code" ColumnName="shop_code" />
+          <ScalarProperty Name="inv_date" ColumnName="inv_date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_prdct_type">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_prdct_type">
+        <MappingFragment StoreEntitySet="tbl_prdct_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_price">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_price">
+        <MappingFragment StoreEntitySet="tbl_price">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="prdct_code" ColumnName="prdct_code" />
+          <ScalarProperty Name="shop_code" ColumnName="shop_code" />
+          <ScalarProperty Name="shelf_price" ColumnName="shelf_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_product">
+        <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="prdct_code" ColumnName="prdct_code" />
+          <ScalarProperty Name="prdct_type" ColumnName="prdct_type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="accent_1" ColumnName="accent_1" />
+          <ScalarProperty Name="accent_1_sub" ColumnName="accent_1_sub" />
+          <ScalarProperty Name="framed" ColumnName="framed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_shop">
+      <EntityTypeMapping TypeName="annorum_supra_cmps411Model.tbl_shop">
+        <MappingFragment StoreEntitySet="tbl_shop">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shop_name" ColumnName="shop_name" />
+          <ScalarProperty Name="shop_code" ColumnName="shop_code" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="acct_rep" ColumnName="acct_rep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

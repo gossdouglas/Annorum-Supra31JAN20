@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="annorum_supra_cmps411Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_common_mtrl">
+    <Key>
+      <PropertyRef Name="type" />
+      <PropertyRef Name="subtype" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subtype" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_expense" Relationship="Self.FK_TBL_EXPENSE_TBL_COMMON_MTRL" FromRole="tbl_common_mtrl" ToRole="tbl_expense" />
+  </EntityType>
+  <EntityType Name="tbl_expense">
+    <Key>
+      <PropertyRef Name="type" />
+      <PropertyRef Name="subtype" />
+      <PropertyRef Name="dscptn" />
+      <PropertyRef Name="date_purchased" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subtype" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dscptn" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date_purchased" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_common_mtrl" Relationship="Self.FK_TBL_EXPENSE_TBL_COMMON_MTRL" FromRole="tbl_expense" ToRole="tbl_common_mtrl" />
+  </EntityType>
+  <EntityType Name="tbl_invoice">
+    <Key>
+      <PropertyRef Name="prdct_code" />
+      <PropertyRef Name="shop_code" />
+      <PropertyRef Name="inv_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="prdct_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="shop_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="inv_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="Self.FK_TBL_INVOICE_TBL_PRODUCT" FromRole="tbl_invoice" ToRole="tbl_product" />
+    <NavigationProperty Name="tbl_shop" Relationship="Self.FK_TBL_INVOICE_TBL_SHOP" FromRole="tbl_invoice" ToRole="tbl_shop" />
+  </EntityType>
+  <EntityType Name="tbl_prdct_type">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="Self.FK_TBL_PRODUCT_TBL_PRDCT_TYPE" FromRole="tbl_prdct_type" ToRole="tbl_product" />
+  </EntityType>
+  <EntityType Name="tbl_price">
+    <Key>
+      <PropertyRef Name="prdct_code" />
+      <PropertyRef Name="shop_code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="prdct_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="shop_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="shelf_price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="tbl_product" Relationship="Self.FK_TBL_PRICE_TBL_PRODUCT" FromRole="tbl_price" ToRole="tbl_product" />
+    <NavigationProperty Name="tbl_shop" Relationship="Self.FK_TBL_PRICE_TBL_SHOP" FromRole="tbl_price" ToRole="tbl_shop" />
+  </EntityType>
+  <EntityType Name="tbl_product">
+    <Key>
+      <PropertyRef Name="prdct_code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="prdct_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="prdct_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accent_1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="accent_1_sub" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="framed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbl_invoice" Relationship="Self.FK_TBL_INVOICE_TBL_PRODUCT" FromRole="tbl_product" ToRole="tbl_invoice" />
+    <NavigationProperty Name="tbl_prdct_type" Relationship="Self.FK_TBL_PRODUCT_TBL_PRDCT_TYPE" FromRole="tbl_product" ToRole="tbl_prdct_type" />
+    <NavigationProperty Name="tbl_price" Relationship="Self.FK_TBL_PRICE_TBL_PRODUCT" FromRole="tbl_product" ToRole="tbl_price" />
+  </EntityType>
+  <EntityType Name="tbl_shop">
+    <Key>
+      <PropertyRef Name="shop_code" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="shop_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="shop_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="acct_rep" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="tbl_invoice" Relationship="Self.FK_TBL_INVOICE_TBL_SHOP" FromRole="tbl_shop" ToRole="tbl_invoice" />
+    <NavigationProperty Name="tbl_price" Relationship="Self.FK_TBL_PRICE_TBL_SHOP" FromRole="tbl_shop" ToRole="tbl_price" />
+  </EntityType>
+  <Association Name="FK_TBL_EXPENSE_TBL_COMMON_MTRL">
+    <End Role="tbl_common_mtrl" Type="Self.tbl_common_mtrl" Multiplicity="1" />
+    <End Role="tbl_expense" Type="Self.tbl_expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_common_mtrl">
+        <PropertyRef Name="type" />
+        <PropertyRef Name="subtype" />
+      </Principal>
+      <Dependent Role="tbl_expense">
+        <PropertyRef Name="type" />
+        <PropertyRef Name="subtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_INVOICE_TBL_PRODUCT">
+    <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="1" />
+    <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="prdct_code" />
+      </Principal>
+      <Dependent Role="tbl_invoice">
+        <PropertyRef Name="prdct_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_INVOICE_TBL_SHOP">
+    <End Role="tbl_shop" Type="Self.tbl_shop" Multiplicity="1" />
+    <End Role="tbl_invoice" Type="Self.tbl_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_shop">
+        <PropertyRef Name="shop_code" />
+      </Principal>
+      <Dependent Role="tbl_invoice">
+        <PropertyRef Name="shop_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_PRODUCT_TBL_PRDCT_TYPE">
+    <End Role="tbl_prdct_type" Type="Self.tbl_prdct_type" Multiplicity="1" />
+    <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_prdct_type">
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="tbl_product">
+        <PropertyRef Name="prdct_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_PRICE_TBL_PRODUCT">
+    <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="1" />
+    <End Role="tbl_price" Type="Self.tbl_price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_product">
+        <PropertyRef Name="prdct_code" />
+      </Principal>
+      <Dependent Role="tbl_price">
+        <PropertyRef Name="prdct_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_PRICE_TBL_SHOP">
+    <End Role="tbl_shop" Type="Self.tbl_shop" Multiplicity="1" />
+    <End Role="tbl_price" Type="Self.tbl_price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_shop">
+        <PropertyRef Name="shop_code" />
+      </Principal>
+      <Dependent Role="tbl_price">
+        <PropertyRef Name="shop_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="annorum_supra_cmps411Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_common_mtrl" EntityType="Self.tbl_common_mtrl" />
+    <EntitySet Name="tbl_expense" EntityType="Self.tbl_expense" />
+    <EntitySet Name="tbl_invoice" EntityType="Self.tbl_invoice" />
+    <EntitySet Name="tbl_prdct_type" EntityType="Self.tbl_prdct_type" />
+    <EntitySet Name="tbl_price" EntityType="Self.tbl_price" />
+    <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
+    <EntitySet Name="tbl_shop" EntityType="Self.tbl_shop" />
+    <AssociationSet Name="FK_TBL_EXPENSE_TBL_COMMON_MTRL" Association="Self.FK_TBL_EXPENSE_TBL_COMMON_MTRL">
+      <End Role="tbl_common_mtrl" EntitySet="tbl_common_mtrl" />
+      <End Role="tbl_expense" EntitySet="tbl_expense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_INVOICE_TBL_PRODUCT" Association="Self.FK_TBL_INVOICE_TBL_PRODUCT">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_INVOICE_TBL_SHOP" Association="Self.FK_TBL_INVOICE_TBL_SHOP">
+      <End Role="tbl_shop" EntitySet="tbl_shop" />
+      <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_PRODUCT_TBL_PRDCT_TYPE" Association="Self.FK_TBL_PRODUCT_TBL_PRDCT_TYPE">
+      <End Role="tbl_prdct_type" EntitySet="tbl_prdct_type" />
+      <End Role="tbl_product" EntitySet="tbl_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_PRICE_TBL_PRODUCT" Association="Self.FK_TBL_PRICE_TBL_PRODUCT">
+      <End Role="tbl_product" EntitySet="tbl_product" />
+      <End Role="tbl_price" EntitySet="tbl_price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_PRICE_TBL_SHOP" Association="Self.FK_TBL_PRICE_TBL_SHOP">
+      <End Role="tbl_shop" EntitySet="tbl_shop" />
+      <End Role="tbl_price" EntitySet="tbl_price" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
