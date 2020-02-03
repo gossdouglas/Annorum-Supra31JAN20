@@ -231,6 +231,7 @@
     <Content Include="Models\allpax_sale_miner.edmx.diagram">
       <DependentUpon>allpax_sale_miner.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\allpax_sales_miner.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

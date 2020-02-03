@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="allpax_sale_minerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="zipCode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_customer_event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="customerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eventID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="eventType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="allpax_sale_minerModelStoreContainer">
+    <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" Schema="cmps411" store:Type="Tables" />
+    <EntitySet Name="tbl_customer_event" EntityType="Self.tbl_customer_event" Schema="cmps411" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
