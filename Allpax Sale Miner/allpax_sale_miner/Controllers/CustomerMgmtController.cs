@@ -123,5 +123,9 @@ namespace allpax_sale_miner.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //begin customer controller code copied from summer project
+
+        //end customer controller code copied from summer project
     }
 }
