@@ -5,60 +5,244 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script>
+$(document).ready(function(){//begin document read jquery statements
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.customerCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.city)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.state)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.zipCode)
-        </th>
-        <th></th>
-    </tr>
+    //begin when a record class is clicked...
+   $(".record").click(function(){
+       /*var selectedItem0 = $(this).attr("id");//works    
+       var selectedItem1 = $(this).find("#record_item1").html();//works valid for inner html only      
+       var selectedItem2 = $(this).find("#record_item2").html();//works valid for inner html only*/
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.customerCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zipCode)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        selectedItem0 = $(this).attr("id");//works    
+        selectedItem1 = $(this).find("#record_item1").html();//works valid for inner html only      
+        selectedItem2 = $(this).find("#record_item2").html();//works valid for inner html only
 
-</table>
+       $("#slctd_id").val(selectedItem0);
+       $("#slctd_type").val(selectedItem1);
+       $("#slctd_subtype").val(selectedItem2);
+       /*alert(
+           "Selected for Edit or Delete POST:"+ '\n' +
+           "Record: " + selectedItem0 + '\n' +
+           "Type: " + selectedItem1 + '\n' +
+           "Sub-type: " + selectedItem2 + '\n'
+       );*/
+   });
+    //end when a record class is clicked...
+
+    $(".btn.btn-primary.editButton").click(function () {//when a record's edit button is clicked...
+        $(this).parent().find(".editButton").hide();
+        $(this).parent().find(".updateButton").show();
+        $(this).parent().find(".deleteButton").hide();
+        $(this).parent().find(".cancelButton").show();
+
+        $(this).parent().find("#record_item1").hide();
+    });
+    $(".btn.btn-primary.cancelButton").click(function () {//when a record's edit button is clicked...      
+        $(this).parent().find(".editButton").show();
+        $(this).parent().find(".updateButton").hide();
+        $(this).parent().find(".deleteButton").show();       
+        $(this).parent().find(".cancelButton").hide();
+        $(this).parent().find(".confirmButton").hide();
+    });
+    $(".btn.btn-primary.deleteButton").click(function () {//when a record's edit button is clicked...
+        $(this).parent().find(".editButton").hide();
+        $(this).parent().find(".updateButton").hide();
+        $(this).parent().find(".deleteButton").hide();       
+        $(this).parent().find(".cancelButton").show();
+        $(this).parent().find(".confirmButton").show();
+    });
+  
+    //begin #addButton
+    $("#addButton").click(function () {//when the add button is clicked...
+        var addItem1 = $("#addRecordItem1").val();
+        var addItem2 = $("#addRecordItem2").val();
+
+        alert(
+           "Selected for Add POST:"+ '\n' +
+           "addItem1: " + addItem1 + '\n' +
+            "addItem2: " + addItem2 + '\n'
+        );
+        $("#addRecordItem1").val('');
+        $("#addRecordItem2").val('');
+//begin axios add post
+
+        axios.post('/Material/AddMaterial', {           
+            type: addItem1,
+            subtype: addItem2,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+//end axios add post
+    });
+    //end #addButton
+
+    //begin confirm edit record
+    $(".btn.btn-primary.updateButton").click(function () {//when a record's edit button is clicked...
+        $(this).hide();
+        $(this).parent().find(".updateButton").show();
+        $(this).parent().find(".deleteButton").hide();
+        $(this).parent().find(".cancelButton").show();      
+    });
+    //end confirm edit record
+
+    //begin axios confirm delete record
+    $(".btn.btn-primary.confirmButton").click(function () {//when a record's delete button is clicked...
+        alert(
+            "Selected for DELETE:"+ '\n' +
+            "Record: " + selectedItem0 + '\n' +
+            "Type: " + selectedItem1 + '\n' +
+            "Sub-type: " + selectedItem2 + '\n');
+
+        axios.post('/Material/DeleteMaterial', {           
+            type: selectedItem1,
+            subtype: selectedItem2,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+            
+    });
+    //end axios confirm delete record
+
+});//end document read jquery statements
+ </script>
+</head>
+
+<div class="container">
+    <div class="row">
+        <h1>Material Management</h1>
+    </div>
+
+    <!--testing begin-->
+    <div>
+        <div class="row">
+            <hr style="border: 1px solid red;">
+            <h4>Testing: Record selected for edit or delete via Axios</h4>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-2">ID: <input type="text" id="slctd_id" value="slctd_id"></div>
+            <div class="col-md-2">TYPE: <input type="text" id="slctd_type" value="slctd_type"></div>
+            <div class="col-md-2">SUBTYPE: <input type="text" id="slctd_subtype" value="slctd_subtype"></div>
+            <div class="col-md-auto">
+                <h5>ACTION</h5>
+                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-primary">Update</button>
+                <button class="btn btn-primary">Delete</button>
+                <button class="btn btn-primary">Cancel</button>
+            </div>
+            <h4>Testing: Record selected for edit or delete via Axios</h4>
+            <hr style="border: 1px solid red;">
+        </div>
+    </div>
+    <!--testing end-->
+    <!--add record begin-->
+    <h4>Testing: Add Record via Axios</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="record" id="">
+
+                <div class="col-md-1" id="yo">
+                    <h6>ID</h6>
+                    <p id="addRecord_item0" value="">AUTO</p>
+                </div>
+
+                <div class="col-md-3" id="">
+                    <h5>TYPE</h5>
+
+                    <!--
+
+                    <p id="record_item1" value=""></p>
+                        
+                    -->
+                    <input type="text" id="addRecordItem1" value="">
+                </div>
+
+                <div class="col-md-3">
+                    <h5>SUB-TYPE</h5>
+                    <!--
+
+                    <p id="record_item2" value=""></p> -->
+
+                    <input type="text" id="addRecordItem2" value="">
+                </div>
+
+                <div class="col-md-auto">
+                    <h5>ACTION</h5>
+                    <button class="btn btn-primary" id="addButton">Add</button>
+                </div>
+
+            </div>
+        </div>
+    </div><br />
+    <h4>Testing: Add Record via Axios</h4>
+    <hr style="border: 1px solid red;">
+    <!--add record end-->
+
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="record" id=@Html.DisplayFor(modelItem => item.id) style="border: 1px solid black; padding-bottom:10px;">
+
+                    <div class="col-md-1" id="yo">
+                        <h6>ID</h6>
+                        <p id="record_item0" value=@Html.DisplayFor(modelItem => item.id)>@Html.DisplayFor(modelItem => item.id)</p>
+                    </div>
+                    <div class="col-md-2 record_item1" id="record_item1_div">
+                        <h5>CUSTOMER CODE</h5>
+                        <!--<input type="text" id="record_item1" value=@Html.DisplayFor(modelItem => item.customerCode)>-->
+                        <p id="record_item1" value=@Html.DisplayFor(modelItem => item.customerCode)>@Html.DisplayFor(modelItem => item.customerCode)</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>NAME</h5>
+                        <!--<input type="text" id="record_item2" value=@Html.DisplayFor(modelItem => item.name)>-->
+                        <p id="record_item2" value=@Html.DisplayFor(modelItem => item.name)>@Html.DisplayFor(modelItem => item.name)</p>
+                    </div>
+					<div class="col-md-2">
+                        <h5>ADDRESS</h5>                        
+                        <p id="record_item3" value=@Html.DisplayFor(modelItem => item.address)>@Html.DisplayFor(modelItem => item.address)</p>
+                    </div>
+					<div class="col-md-2">
+                        <h5>CITY</h5>                        
+                        <p id="record_item4" value=@Html.DisplayFor(modelItem => item.city)>@Html.DisplayFor(modelItem => item.city)</p>
+                    </div>
+					<div class="col-md-1">
+                        <h5>STATE</h5>                        
+                        <p id="record_item5" value=@Html.DisplayFor(modelItem => item.state)>@Html.DisplayFor(modelItem => item.state)</p>
+                    </div>
+					<div class="col-md-1">
+                        <h5>ZIP</h5>                        
+                        <p id="record_item6" value=@Html.DisplayFor(modelItem => item.zipCode)>@Html.DisplayFor(modelItem => item.zipCode)</p>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <h5>ACTION</h5>
+                        <button class="btn btn-primary editButton">Edit</button>
+                        <button class="btn btn-primary updateButton" style="display:none;">Update</button>
+                        <button class="btn btn-primary deleteButton">Delete</button>
+                        <button class="btn btn-primary confirmButton" style="display:none;">Confirm</button>
+                        <button class="btn btn-primary cancelButton" style="display:none;">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div><br />
+    }
+
+</div>         
+        <!-- /container -->

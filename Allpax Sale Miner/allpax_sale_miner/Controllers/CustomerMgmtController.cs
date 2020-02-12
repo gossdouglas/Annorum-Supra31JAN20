@@ -17,7 +17,11 @@ namespace allpax_sale_miner.Controllers
         // GET: CustomerMgmt
         public ActionResult Index()
         {
-            return View(db.tbl_customer.ToList());
+            allpax_sale_minerEntities entities = new allpax_sale_minerEntities();
+            List<tbl_customer> custMgmt = entities.tbl_customer.ToList();
+          
+            return View(custMgmt.ToList());
+            //return View(db.tbl_customer.ToList());
         }
 
         // GET: CustomerMgmt/Details/5
@@ -123,5 +127,9 @@ namespace allpax_sale_miner.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //begin customer controller code copied from summer project
+
+        //end customer controller code copied from summer project
     }
 }
