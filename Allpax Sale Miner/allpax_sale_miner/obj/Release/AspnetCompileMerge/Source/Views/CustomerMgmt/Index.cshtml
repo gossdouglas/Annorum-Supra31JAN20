@@ -17,13 +17,22 @@ $(document).ready(function(){//begin document read jquery statements
        var selectedItem1 = $(this).find("#record_item1").html();//works valid for inner html only      
        var selectedItem2 = $(this).find("#record_item2").html();//works valid for inner html only*/
 
-        selectedItem0 = $(this).attr("id");//works    
-        selectedItem1 = $(this).find("#record_item1").html();//works valid for inner html only      
-        selectedItem2 = $(this).find("#record_item2").html();//works valid for inner html only
+       selectedItem0 = $(this).attr("id");//works    
+       selectedItem1 = $(this).find("#record_item1").html();//works valid for inner html only      
+       selectedItem2 = $(this).find("#record_item2").html();//works valid for inner html only
+       selectedItem3 = $(this).find("#record_item3").html();//works valid for inner html only 
+       selectedItem4 = $(this).find("#record_item4").html();//works valid for inner html only      
+       selectedItem5 = $(this).find("#record_item5").html();//works valid for inner html only
+       selectedItem6 = $(this).find("#record_item6").html();//works valid for inner html only
+
 
        $("#slctd_id").val(selectedItem0);
-       $("#slctd_type").val(selectedItem1);
-       $("#slctd_subtype").val(selectedItem2);
+       $("#slctd_customerCode").val(selectedItem1);
+       $("#slctd_name").val(selectedItem2);
+       $("#slctd_address").val(selectedItem3);
+       $("#slctd_city").val(selectedItem4);
+       $("#slctd_state").val(selectedItem5);
+       $("#slctd_zipCode").val(selectedItem6);
        /*alert(
            "Selected for Edit or Delete POST:"+ '\n' +
            "Record: " + selectedItem0 + '\n' +
@@ -120,12 +129,12 @@ $(document).ready(function(){//begin document read jquery statements
  </script>
 </head>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <h1>Material Management</h1>
     </div>
 
-    <!--testing begin-->
+    <!--click event begin-->
     <div>
         <div class="row">
             <hr style="border: 1px solid red;">
@@ -135,51 +144,52 @@ $(document).ready(function(){//begin document read jquery statements
         <div class="row">
 
             <div class="col-md-2">ID: <input type="text" id="slctd_id" value="slctd_id"></div>
-            <div class="col-md-2">TYPE: <input type="text" id="slctd_type" value="slctd_type"></div>
-            <div class="col-md-2">SUBTYPE: <input type="text" id="slctd_subtype" value="slctd_subtype"></div>
-            <div class="col-md-auto">
-                <h5>ACTION</h5>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-primary">Update</button>
-                <button class="btn btn-primary">Delete</button>
-                <button class="btn btn-primary">Cancel</button>
-            </div>
-            <h4>Testing: Record selected for edit or delete via Axios</h4>
+            <div class="col-md-2">C-Code: <input type="text" id="slctd_customerCode" value="slctd_customerCode"></div>
+            <div class="col-md-2">NAME: <input type="text" id="slctd_name" value="slctd_name"></div>
+            <div class="col-md-2">address: <input type="text" id="slctd_address" value="slctd_address"></div>
+            <div class="col-md-2">city: <input type="text" id="slctd_city" value="slctd_city"></div>
+            <div class="col-md-2">state: <input type="text" id="slctd_state" value="slctd_state"></div>
+            <div class="col-md-2">zip: <input type="text" id="slctd_zipCode" value="slctd_zipCode"></div>
+        </div>
+        <div class="row">
             <hr style="border: 1px solid red;">
         </div>
     </div>
-    <!--testing end-->
+    <!--click event end-->
     <!--add record begin-->
     <h4>Testing: Add Record via Axios</h4>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="record" id="">
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="record" id="">
                 <div class="col-md-1" id="yo">
                     <h6>ID</h6>
                     <p id="addRecord_item0" value="">AUTO</p>
                 </div>
-
-                <div class="col-md-3" id="">
-                    <h5>TYPE</h5>
-
-                    <!--
-
-                    <p id="record_item1" value=""></p>
-                        
-                    -->
+                <div class="col-md-2" id="">
+                    <h5>CUSTOMER CODE</h5>
                     <input type="text" id="addRecordItem1" value="">
                 </div>
-
-                <div class="col-md-3">
-                    <h5>SUB-TYPE</h5>
-                    <!--
-
-                    <p id="record_item2" value=""></p> -->
-
+                <div class="col-md-2">
+                    <h5>NAME</h5>
                     <input type="text" id="addRecordItem2" value="">
                 </div>
-
+                <div class="col-md-2">
+                    <h5>ADDRESS</h5>
+                    <input type="text" id="addRecordItem3" value="">
+                </div>
+                <div class="col-md-2">
+                    <h5>CITY</h5>
+                    <input type="text" id="addRecordItem4" value="">
+                </div>
+                <div class="col-md-1">
+                    <h5>STATE</h5>
+                    <input type="text" id="addRecordItem5" value="">
+                </div>
+                <div class="col-md-1">
+                    <h5>ZIP</h5>
+                    <input type="text" id="addRecordItem6" value="">
+                </div>
                 <div class="col-md-auto">
                     <h5>ACTION</h5>
                     <button class="btn btn-primary" id="addButton">Add</button>
@@ -213,20 +223,20 @@ $(document).ready(function(){//begin document read jquery statements
                         <!--<input type="text" id="record_item2" value=@Html.DisplayFor(modelItem => item.name)>-->
                         <p id="record_item2" value=@Html.DisplayFor(modelItem => item.name)>@Html.DisplayFor(modelItem => item.name)</p>
                     </div>
-					<div class="col-md-2">
-                        <h5>ADDRESS</h5>                        
+                    <div class="col-md-2">
+                        <h5>ADDRESS</h5>
                         <p id="record_item3" value=@Html.DisplayFor(modelItem => item.address)>@Html.DisplayFor(modelItem => item.address)</p>
                     </div>
-					<div class="col-md-2">
-                        <h5>CITY</h5>                        
+                    <div class="col-md-2">
+                        <h5>CITY</h5>
                         <p id="record_item4" value=@Html.DisplayFor(modelItem => item.city)>@Html.DisplayFor(modelItem => item.city)</p>
                     </div>
-					<div class="col-md-1">
-                        <h5>STATE</h5>                        
+                    <div class="col-md-1">
+                        <h5>STATE</h5>
                         <p id="record_item5" value=@Html.DisplayFor(modelItem => item.state)>@Html.DisplayFor(modelItem => item.state)</p>
                     </div>
-					<div class="col-md-1">
-                        <h5>ZIP</h5>                        
+                    <div class="col-md-1">
+                        <h5>ZIP</h5>
                         <p id="record_item6" value=@Html.DisplayFor(modelItem => item.zipCode)>@Html.DisplayFor(modelItem => item.zipCode)</p>
                     </div>
 
@@ -244,5 +254,6 @@ $(document).ready(function(){//begin document read jquery statements
         </div><br />
     }
 
-</div>         
+</div> 
+
         <!-- /container -->
