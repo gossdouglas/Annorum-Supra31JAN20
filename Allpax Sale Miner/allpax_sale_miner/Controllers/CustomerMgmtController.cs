@@ -130,7 +130,6 @@ namespace allpax_sale_miner.Controllers
 
         //begin customer controller code copied from summer project
 
-
         //end customer controller code copied from summer project
     }
 }
