@@ -283,6 +283,7 @@
     <Content Include="Views\CustomerMgmt\Details.cshtml" />
     <Content Include="Views\CustomerMgmt\Edit.cshtml" />
     <Content Include="Views\CustomerMgmt\Index.cshtml" />
+    <Content Include="Views\CustomerMgmt\Index-orig.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
